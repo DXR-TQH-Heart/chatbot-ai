@@ -35,6 +35,11 @@
             <artifactId>chatbot-ai-domain</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.dxr.ai</groupId>
+            <artifactId>chatbot-ai-application</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>

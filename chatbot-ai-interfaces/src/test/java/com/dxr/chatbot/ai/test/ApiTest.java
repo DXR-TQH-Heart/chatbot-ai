@@ -32,12 +32,15 @@ public class ApiTest {
         UnAnsweredQuestionsAggregates unAnsweredQuestionsAggregates = zsxApi.queryUnansweredQuestionsTopicId(groupId,cookie);
         logger.info("测试结果{}", JSON.toJSONString(unAnsweredQuestionsAggregates));
         List<Topics> topics = unAnsweredQuestionsAggregates.getResp_data().getTopics();
+        if(topics==null||topics.isEmpty()){
+            return;
+        }
         for (Topics topic : topics) {
             String topicId = topic.getTopic_id();
             String text=topic.getQuestion().getText();
             logger.info("topicId:{},question:{}",topicId,text);
             //回答问题
-            zsxApi.answer(groupId,cookie,topicId,text,false);
+            zsxApi.answer(groupId,cookie,topicId,"歌手",false);
         }
     }
 }
